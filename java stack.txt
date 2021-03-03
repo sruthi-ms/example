@@ -1,0 +1,130 @@
+JAVA IMPLEMENTATION OF  STACK
+               
+
+package lab4;
+import java.util.Scanner;
+public class STACK {
+	Scanner obj1=new Scanner(System.in);
+	int no=obj1.nextInt();
+int [] a=new int[no];
+int top;
+void STACK_init()
+{
+	top=-1;
+}
+boolean empty()
+{
+	if(top==-1)
+		return true;
+	else
+		return false;
+}
+void displayDECK()
+{
+	if(empty())
+		System.out.println("stack is empty");
+	else
+		for(int i=0;i<no;i++)
+		{
+			System.out.println(a[i]+" ");
+		}
+}
+boolean full()
+{
+	if(top==(no-1))
+		return true;
+	else
+		return false;
+}
+void insert(int item)
+{
+	if(full())
+		System.out.println("stack is overloaded");
+	else
+	{
+	top++;
+	a[top]=item;
+	}
+}
+
+void pop()
+{
+	int item;
+	if(empty())
+		System.out.println("stack is empty");
+
+	else
+	{
+		item=a[top];
+	top--;
+	System.out.println(item);
+	}
+}
+void peek()
+{
+	int item;
+	if(empty())
+	{
+		System.out.println("stack is empty");
+	}
+	else
+	{
+		item=a[top];
+		System.out.println(item);
+	}
+}
+}
+public static void main(String[] args) {
+		
+			System.out.println("Enter the size of the array");
+			Scanner obj=new Scanner(System.in);
+			STACK s=new STACK();
+			s.STACK_init();
+			int n,a;
+			System.out.println("To insert press 1\n"+"To pop press 2\n"+"To peek press 3\n"+"To display deck press 4\n"+"To exit press 0\n");
+			while(true)
+			{
+				a=obj.nextInt();
+				if(a==1)
+				{
+					System.out.println("Enter the element to be inserted\n");
+					n=obj.nextInt();
+					s.insert(n);
+					System.out.println("inserted "+n+" at the front side");
+				}
+				else if(a==2)
+				{
+					System.out.println("\npoped element is");
+					s.pop();
+				}
+				else if(a==3)
+				{
+					System.out.println("Element seen when peeked is ");
+					s.peek();
+				}
+				else if(a==4)
+				{
+					s.displayDECK();
+				}
+				else if(a==0)
+				{
+					break;
+				}
+				else
+				{
+					System.out.println("error");
+				}
+				
+					
+			}
+			
+		obj.close();	
+		}
+		}
+
+
+
+
+
+
+
